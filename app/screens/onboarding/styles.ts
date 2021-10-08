@@ -18,10 +18,8 @@ export const styles = StyleSheet.create({
   },
  
     loginContainer: {
-       flex: 1,
-    marginHorizontal: 10,
-    width: '80%',
-    alignItems: 'center',
+      alignItems: 'center',
+      flex: 1,
 
     },
     welcomeTxt: {
@@ -36,5 +34,9 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         color: GREYISH_BROWN,
         paddingTop: 50
-    }
+    },
+    imageContainer: {
+    backgroundColor: '#fff',
+    flex: 1
+    },
 });

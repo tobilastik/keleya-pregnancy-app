@@ -4,9 +4,10 @@ import _Text from '../../components/Text';
 import {strings} from '../../locales';
 import {styles} from './styles';
 import img from '../../constants/images';
-import Button from '../../components/Button';
+import ScrollPicker from '../../components/ScrollPicker';
 import Header from '../../components/Header';
 import {WHITE} from '../../constants/colors';
+import Button from '../../components/Button';
 
 interface WorkoutScreenProps {
   navigation: any;
@@ -26,11 +27,7 @@ const WorkoutScreen = ({navigation}: WorkoutScreenProps) => {
         <Header navigation={navigation} />
         <_Text style={styles.welcomeTxt}>{strings.activityWorkoutTitle}</_Text>
       </ImageBackground>
-
-      {/* <View style={styles.loginContainer}> */}
-
-      {/* </View> */}
-
+      <ScrollPicker />
       <View style={{alignItems: 'center', paddingBottom: 20}}>
         <Button onPress={handleContinue} title={strings.continue} />
       </View>

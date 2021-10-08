@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: 250,
+    marginTop: -30
   },
   pageContainer: {
     flex: 1,
@@ -15,13 +16,12 @@ export const styles = StyleSheet.create({
     alignItems: 'center'
   },
   imageContainer: {
-    backgroundColor: '#E3E6EE',
+    backgroundColor: '#E1E4EC',
     flex: 1
     },
     loginContainer: {
       alignItems: 'center',
       flex: 1,
-
     },
     welcomeTxt: {
        fontSize: 24,

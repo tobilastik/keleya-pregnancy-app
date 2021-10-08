@@ -7,6 +7,7 @@ import img from '../../constants/images';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import Header from '../../components/Header';
+import CheckBox from '../../components/Checkbox';
 
 interface SignupProps {
   navigation: any;
@@ -24,12 +25,14 @@ const Signup = ({navigation}: SignupProps) => {
   };
   return (
     <>
-      <ImageBackground
-        resizeMode="cover"
-        style={styles.image}
-        source={img.authentication}>
+      <View style={styles.imageContainer}>
         <Header navigation={navigation} />
-      </ImageBackground>
+        <ImageBackground
+          resizeMode="cover"
+          style={styles.image}
+          source={img.authentication}
+        />
+      </View>
 
       <View style={styles.loginContainer}>
         <_Text weight="medium" style={styles.welcomeTxt}>
@@ -42,6 +45,10 @@ const Signup = ({navigation}: SignupProps) => {
           secureTextVisible={passwordVisible}
           toggleTextVisibility={toggleTextVisibility}
         />
+        <View style={{padding: 20}}>
+          <CheckBox checked text={strings.readPolicyText} />
+          <CheckBox text={strings.acceptTermsText} />
+        </View>
       </View>
 
       <View style={{alignItems: 'center', paddingBottom: 20}}>

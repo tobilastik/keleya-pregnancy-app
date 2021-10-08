@@ -6,10 +6,10 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  image: {
-    width: screenWidth(100),
-    height: screenHeight(40),
-    resizeMode: 'cover',
+   image: {
+    width: '100%',
+    height: 250,
+    marginTop: -30
   },
   pageContainer: {
     flex: 1,
@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
     },
     loginContainer: {
       alignItems: 'center',
-      flex: 1,
+      flex: 1.2,
 
     },
     welcomeTxt: {

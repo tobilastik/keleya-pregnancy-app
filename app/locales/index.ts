@@ -23,7 +23,8 @@ en: {
   skip: 'Skip',
   allowNotifications: 'Allow notifications',
   successTitle: 'Get notifications to boost your motivation',
-  weekActive: 'times a week'
+  weekActive: 'times a week',
+  onceWeek: 'Once a week'
   
 }, 
 de: {
@@ -46,6 +47,8 @@ de: {
   skip: 'Überspringen',
   allowNotifications: 'Benachrichtigungen zulassen',
   successTitle: 'Erhalten Sie Benachrichtigungen, um Ihre Motivation zu steigern',
-  weekActive: 'pro Woche'
+  weekActive: 'pro Woche',
+  onceWeek: 'Wöchentlich'
+
 }
 })
