@@ -2,7 +2,9 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import AppNavigation from './app/navigation/app';
 import {strings} from './app/locales';
-import {SafeAreaView} from 'react-native';
+import {Provider} from 'react-redux';
+import {store, persistor} from './app/store';
+import {PersistGate} from 'redux-persist/integration/react';
 
 interface AppProps {}
 
@@ -20,9 +22,11 @@ const App = (props: AppProps) => {
   };
   return (
     <NavigationContainer>
-      {/* <SafeAreaView style={{flex: 1}}> */}
-      <AppNavigation />
-      {/* </SafeAreaView> */}
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <AppNavigation />
+        </PersistGate>
+      </Provider>
     </NavigationContainer>
   );
 };

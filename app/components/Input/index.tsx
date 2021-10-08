@@ -1,10 +1,9 @@
 import * as React from 'react';
 import {
-  Text,
-  View,
-  StyleSheet,
   TextInput,
   TouchableOpacity,
+  NativeSyntheticEvent,
+  TextInputChangeEventData,
 } from 'react-native';
 import {styles} from './styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -17,6 +16,8 @@ interface InputProps {
   toggleTextVisibility?: () => void;
   secureTextVisible?: boolean;
   centeredText?: boolean;
+  value: string;
+  onChangeText: any;
 }
 
 const Input = ({
@@ -25,6 +26,8 @@ const Input = ({
   toggleTextVisibility,
   secureTextVisible,
   centeredText,
+  value,
+  onChangeText,
 }: InputProps) => {
   const renderRightIcon = () => {
     if (secureTextEntry) {
@@ -53,6 +56,9 @@ const Input = ({
         placeholder={placeholder}
         placeholderTextColor={WARM_GREY}
         secureTextEntry={secureTextEntry ? !secureTextVisible : false}
+        value={value}
+        onChangeText={onChangeText}
+        autoCorrect={false}
       />
       {renderRightIcon()}
     </Flex>

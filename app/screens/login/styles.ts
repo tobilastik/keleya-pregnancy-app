@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#E1E4EC',
     flex: 1
     },
-    loginContainer: {
+loginContainer: {
       alignItems: 'center',
       flex: 1,
     },

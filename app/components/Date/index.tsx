@@ -7,13 +7,15 @@ import {styles} from './styles';
 interface DateComponentProps {
   date: any;
   onPress: () => void;
+  datePicked: boolean;
 }
 
-const DateComponent = ({date, onPress}: DateComponentProps) => {
+const DateComponent = ({date, onPress, datePicked}: DateComponentProps) => {
+  const [placeholder, setPlaceholder] = React.useState('Select date');
   return (
     <TouchableOpacity style={styles.dateContainer} onPress={onPress}>
       <_Text weight="bold" style={styles.dateTxt}>
-        {moment(date).format('MMM DD, YYYY')}
+        {datePicked ? moment(date).format('MMM DD, YYYY') : placeholder}
       </_Text>
     </TouchableOpacity>
   );

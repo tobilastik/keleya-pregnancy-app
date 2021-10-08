@@ -13,8 +13,20 @@ interface NameScreenProps {
 }
 
 const NameScreen = ({navigation}: NameScreenProps) => {
+  const [disableBtn, setDisableBtn] = React.useState(true);
+  const [name, setName] = React.useState('');
+
   const handleContinue = () => {
     navigation.navigate('DateScreen');
+  };
+
+  const handleName = (txt: string) => {
+    if (txt.length > 1) {
+      setDisableBtn(false);
+    } else {
+      setDisableBtn(true);
+    }
+    setName(txt);
   };
 
   return (
@@ -28,11 +40,20 @@ const NameScreen = ({navigation}: NameScreenProps) => {
 
       <View style={styles.loginContainer}>
         <_Text style={styles.welcomeTxt}>{strings.welcomeText}</_Text>
-        <Input centeredText placeholder="Your name" />
+        <Input
+          value={name}
+          onChangeText={(txt: string) => handleName(txt)}
+          centeredText
+          placeholder="Your name"
+        />
       </View>
 
       <View style={{alignItems: 'center', paddingBottom: 20}}>
-        <Button onPress={handleContinue} title={strings.continue} />
+        <Button
+          disabled={disableBtn}
+          onPress={handleContinue}
+          title={strings.continue}
+        />
       </View>
     </>
   );

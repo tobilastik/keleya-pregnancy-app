@@ -7,6 +7,7 @@ import img from '../../constants/images';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import Header from '../../components/Header';
+import {validateEmail} from '../../lib/formatHelper';
 
 interface LoginProps {
   navigation: any;
@@ -14,11 +15,24 @@ interface LoginProps {
 
 const Login = ({navigation}: LoginProps) => {
   const [passwordVisible, setPasswordVisible] = React.useState(false);
+  const [password, setPassword] = React.useState('');
+  const [email, setEmail] = React.useState('rajio@gmail.com');
+  const [disableBtn, setDisableBtn] = React.useState(true);
 
-  const handleSignup = () => {};
+  React.useEffect(() => {
+    validateInputs();
+  }, [email, password]);
+
+  const validateInputs = () => {
+    if (validateEmail(email) && password.length > 2) {
+      setDisableBtn(false);
+    } else {
+      setDisableBtn(true);
+    }
+  };
 
   const handleLogin = () => {
-    navigation.navigate('Login');
+    navigation.navigate('SuccessScreen');
   };
 
   const toggleTextVisibility = () => {
@@ -39,8 +53,14 @@ const Login = ({navigation}: LoginProps) => {
         <_Text weight="medium" style={styles.welcomeTxt}>
           {strings.welcomeback}
         </_Text>
-        <Input placeholder="example@gmail.com" />
         <Input
+          value={email}
+          placeholder="example@gmail.com"
+          onChangeText={(txt: string) => setEmail(txt)}
+        />
+        <Input
+          value={password}
+          onChangeText={(txt: string) => setPassword(txt)}
           secureTextEntry
           placeholder="Enter a password"
           secureTextVisible={passwordVisible}
@@ -49,12 +69,16 @@ const Login = ({navigation}: LoginProps) => {
       </View>
 
       <View style={{alignItems: 'center', paddingBottom: 20}}>
-        <TouchableOpacity onPress={handleLogin}>
+        <TouchableOpacity onPress={() => {}}>
           <_Text weight="medium" style={styles.forgotPassword}>
             {strings.forgotPassword}
           </_Text>
         </TouchableOpacity>
-        <Button onPress={handleSignup} title={strings.logIn} />
+        <Button
+          disabled={disableBtn}
+          onPress={handleLogin}
+          title={strings.logIn}
+        />
       </View>
     </>
   );

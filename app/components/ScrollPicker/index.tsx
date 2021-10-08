@@ -15,7 +15,13 @@ const ScrollPicker = (props: ScrollPickerProps) => {
         onValueChange={(itemValue, itemIndex) => setSelectedItem(itemValue)}>
         {ACTIVE_TIME.map((item: any, index: number) => {
           if (item.key == 1) {
-            return <Picker.Item label={strings.onceWeek} value={item.key} />;
+            return (
+              <Picker.Item
+                key={item.key}
+                label={strings.onceWeek}
+                value={item.key}
+              />
+            );
           } else
             return (
               <Picker.Item

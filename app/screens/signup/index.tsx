@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, ImageBackground, TouchableOpacity} from 'react-native';
+import {View, ImageBackground} from 'react-native';
 import _Text from '../../components/Text';
 import {strings} from '../../locales';
 import {styles} from './styles';
@@ -8,6 +8,7 @@ import Button from '../../components/Button';
 import Input from '../../components/Input';
 import Header from '../../components/Header';
 import CheckBox from '../../components/Checkbox';
+import {validateEmail} from '../../lib/formatHelper';
 
 interface SignupProps {
   navigation: any;
@@ -15,6 +16,28 @@ interface SignupProps {
 
 const Signup = ({navigation}: SignupProps) => {
   const [passwordVisible, setPasswordVisible] = React.useState(false);
+  const [disableBtn, setDisableBtn] = React.useState(true);
+  const [acceptPolicy, setAcceptPolicy] = React.useState(false);
+  const [acceptTerms, setAcceptTerms] = React.useState(false);
+  const [password, setPassword] = React.useState('');
+  const [email, setEmail] = React.useState('rajio@gmail.com');
+
+  React.useEffect(() => {
+    validateInputs();
+  }, [email, password, acceptTerms, acceptPolicy]);
+
+  const validateInputs = () => {
+    if (
+      validateEmail(email) &&
+      password.length > 2 &&
+      acceptPolicy &&
+      acceptTerms
+    ) {
+      setDisableBtn(false);
+    } else {
+      setDisableBtn(true);
+    }
+  };
 
   const handleSignup = () => {
     navigation.navigate('NameScreen');
@@ -23,6 +46,15 @@ const Signup = ({navigation}: SignupProps) => {
   const toggleTextVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
+
+  const handlePolicy = () => {
+    setAcceptPolicy(!acceptPolicy);
+  };
+
+  const handleTerms = () => {
+    setAcceptTerms(!acceptTerms);
+  };
+
   return (
     <>
       <View style={styles.imageContainer}>
@@ -38,21 +70,39 @@ const Signup = ({navigation}: SignupProps) => {
         <_Text weight="medium" style={styles.welcomeTxt}>
           {strings.titleAccountDetails}
         </_Text>
-        <Input placeholder="example@gmail.com" />
         <Input
+          value={email}
+          placeholder="example@gmail.com"
+          onChangeText={(txt: string) => setEmail(txt)}
+        />
+        <Input
+          value={password}
+          onChangeText={(txt: string) => setPassword(txt)}
           secureTextEntry
           placeholder="Enter a password"
           secureTextVisible={passwordVisible}
           toggleTextVisibility={toggleTextVisibility}
         />
         <View style={{padding: 20}}>
-          <CheckBox checked text={strings.readPolicyText} />
-          <CheckBox text={strings.acceptTermsText} />
+          <CheckBox
+            checked={acceptPolicy}
+            onPress={handlePolicy}
+            text={strings.readPolicyText}
+          />
+          <CheckBox
+            checked={acceptTerms}
+            onPress={handleTerms}
+            text={strings.acceptTermsText}
+          />
         </View>
       </View>
 
       <View style={{alignItems: 'center', paddingBottom: 20}}>
-        <Button onPress={handleSignup} title={strings.createAccount} />
+        <Button
+          disabled={disableBtn}
+          onPress={handleSignup}
+          title={strings.createAccount}
+        />
       </View>
     </>
   );
