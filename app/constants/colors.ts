@@ -1,0 +1,6 @@
+export const WHITE	= '#ffffff'
+export const PALE_TEAL	= '#69c0ba'
+export const LIGHT_TEAL	= '#9adcd7'
+export const GREYISH_BROWN	= '#4a4a4a'
+export const WARM_GREY	= '#9b9b9b'
+export const BUBBLE_GUM	= '#e97db5'
