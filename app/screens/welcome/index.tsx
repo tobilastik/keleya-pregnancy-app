@@ -33,8 +33,12 @@ const Welcome = ({navigation}: WelcomeProps) => {
         </_Text>
       </SafeAreaView>
       <View style={{alignItems: 'center', paddingBottom: 20}}>
-        <Button onPress={handleSignup} title={strings.getStarted} />
-        <TouchableOpacity onPress={handleLogin}>
+        <Button
+          testID={'SignupButton'}
+          onPress={handleSignup}
+          title={strings.getStarted}
+        />
+        <TouchableOpacity testID={'LoginButton'} onPress={handleLogin}>
           <_Text weight="medium" style={styles.welcomeTxt}>
             {strings.orLogin}
           </_Text>

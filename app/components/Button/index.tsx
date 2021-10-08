@@ -9,6 +9,7 @@ interface ButtonProps {
   backgroundColor?: any;
   style?: any;
   title: string;
+  testID?: any;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -17,11 +18,13 @@ const Button: React.FC<ButtonProps> = ({
   backgroundColor,
   style,
   disabled,
+  testID,
   ...restProps
 }) => {
   return (
     <View>
       <Pressable
+        testID={testID}
         disabled={disabled}
         android_disableSound={true}
         android_ripple={{color: 'transparent'}}

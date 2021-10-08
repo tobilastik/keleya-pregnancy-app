@@ -25,7 +25,7 @@ const SuccessScreen = (props: SuccessScreenProps) => {
         <_Text style={styles.notificationTxt}>{strings.successTitle}</_Text>
       </SafeAreaView>
       <View style={{alignItems: 'center', paddingBottom: 20}}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => {}}>
           <_Text weight="medium" style={styles.skipTxt}>
             {strings.skip}
           </_Text>

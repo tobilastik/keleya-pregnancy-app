@@ -7,6 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
+    "test:watch": "jest --watchAll",
     "lint": "eslint ."
   },
   "dependencies": {
@@ -23,7 +24,7 @@
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.8.0",
     "react-native-vector-icons": "^8.1.0",
-     "react-redux": "^7.2.5",
+    "react-redux": "^7.2.5",
     "redux": "^4.1.1",
     "redux-persist": "^6.0.0"
   },
@@ -31,6 +32,8 @@
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
+    "@testing-library/jest-native": "^4.0.2",
+    "@testing-library/react-native": "^7.2.0",
     "@types/jest": "^27.0.2",
     "@types/react": "^17.0.27",
     "@types/react-native": "^0.65.5",
@@ -44,6 +47,17 @@
     "typescript": "^4.4.3"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|react)/",
+      "node_modules/(?!(jest-)?@?react-native|@react-native-community|@react-navigation)"
+    ],
+    "setupFiles": [
+      "./jest-setup.js"
+    ],
+    "globals": {
+      "__DEV__": true
+    },
+    "testEnvironment": "node"
   }
 }
