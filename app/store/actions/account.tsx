@@ -1,6 +1,6 @@
 import {USER_ACCOUNT} from '../types';
 
-const setUserAccount = (payload: {}) => ({
+const setUserAccount = (payload: [{email: string; password: string}]) => ({
   type: USER_ACCOUNT,
   payload,
 });

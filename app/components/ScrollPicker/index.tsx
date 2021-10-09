@@ -25,6 +25,7 @@ const ScrollPicker = (props: ScrollPickerProps) => {
           } else
             return (
               <Picker.Item
+                key={item.key}
                 label={`${item.freq} ${strings.weekActive}`}
                 value={item.key}
               />

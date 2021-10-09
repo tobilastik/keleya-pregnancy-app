@@ -1,11 +1,15 @@
 import {USER_ACCOUNT} from '../types';
 
+interface AccountStateArray {
+  userAccount: any;
+}
+
 const initialstate = {
   userAccount: [],
-};
+} as AccountStateArray;
 
 type Action = {
-  type: string;
+  type: any;
   payload?: any;
 };
 

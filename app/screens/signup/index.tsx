@@ -9,12 +9,18 @@ import Input from '../../components/Input';
 import Header from '../../components/Header';
 import CheckBox from '../../components/Checkbox';
 import {validateEmail} from '../../lib/formatHelper';
+import {useSelector, useDispatch} from 'react-redux';
+import {State} from '../../store/reducers';
+import {userAction} from '../../store/actions';
 
 interface SignupProps {
   navigation: any;
 }
 
 const Signup = ({navigation}: SignupProps) => {
+  const dispactch = useDispatch();
+  const {userAccount} = useSelector((state: State) => state.account);
+
   const [passwordVisible, setPasswordVisible] = React.useState(false);
   const [disableBtn, setDisableBtn] = React.useState(true);
   const [acceptPolicy, setAcceptPolicy] = React.useState(false);
@@ -40,6 +46,7 @@ const Signup = ({navigation}: SignupProps) => {
   };
 
   const handleSignup = () => {
+    dispactch(userAction.setUserAccount([{email, password}]));
     navigation.navigate('NameScreen');
   };
 
