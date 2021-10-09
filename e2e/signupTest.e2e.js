@@ -8,7 +8,7 @@ describe('Signup Flow', () => {
     });
 
     describe('Signup Steps', () => {
-        it('should go with all register process', async () => {
+        it('should sign up users', async () => {
             await element(by.id('SignupButton')).atIndex(0).tap();
             await waitFor(element(by.id('signup'))).toBeVisible();
 
