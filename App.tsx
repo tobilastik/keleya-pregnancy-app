@@ -23,9 +23,9 @@ const App = (props: AppProps) => {
   return (
     <NavigationContainer>
       <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <AppNavigation />
-        </PersistGate>
+        {/* <PersistGate loading={null} persistor={persistor}> */}
+        <AppNavigation />
+        {/* </PersistGate> */}
       </Provider>
     </NavigationContainer>
   );

@@ -17,8 +17,7 @@ export default (state: any = initialstate, action: Action) => {
   switch (action.type) {
     case USER_ACCOUNT:
       return {
-        ...state,
-        userAccount: action.payload,
+        userAccount: [...state.userAccount, action.payload],
       };
     default:
       return state;

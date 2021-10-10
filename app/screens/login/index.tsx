@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, ImageBackground, TouchableOpacity} from 'react-native';
+import {View, ImageBackground, TouchableOpacity, Alert} from 'react-native';
 import _Text from '../../components/Text';
 import {strings} from '../../locales';
 import {styles} from './styles';
@@ -8,15 +8,19 @@ import Button from '../../components/Button';
 import Input from '../../components/Input';
 import Header from '../../components/Header';
 import {validateEmail} from '../../lib/formatHelper';
+import {State} from '../../store/reducers';
+import {useSelector} from 'react-redux';
 
 interface LoginProps {
   navigation: any;
 }
 
 const Login = ({navigation}: LoginProps) => {
+  const {userAccount} = useSelector((state: State) => state.account);
+
   const [passwordVisible, setPasswordVisible] = React.useState(false);
   const [password, setPassword] = React.useState('');
-  const [email, setEmail] = React.useState('rajio@gmail.com');
+  const [email, setEmail] = React.useState('');
   const [disableBtn, setDisableBtn] = React.useState(true);
 
   React.useEffect(() => {
@@ -31,8 +35,37 @@ const Login = ({navigation}: LoginProps) => {
     }
   };
 
-  const handleLogin = () => {
-    navigation.navigate('SuccessScreen');
+  let tobi = [
+    {
+      email: 'raji@gmail.com',
+      password: '12345',
+    },
+    {
+      email: 'raji2@gmail.com',
+      password: '12345',
+    },
+    {
+      email: 'raji3@gmail.com',
+      password: '12345',
+    },
+  ];
+
+  const checkCredentials = () => {
+    let emailResult = userAccount.filter((obj: any) => {
+      return obj.email == email.toLowerCase();
+    });
+    let correctInput = emailResult.some(
+      (x: any) => x.password === password && x.email == email.toLowerCase(),
+    );
+    handleLogin(correctInput);
+  };
+
+  const handleLogin = (result: boolean) => {
+    if (result) {
+      navigation.navigate('SuccessScreen');
+    } else {
+      Alert.alert('Error', 'Wrong email or password');
+    }
   };
 
   const toggleTextVisibility = () => {
@@ -76,7 +109,7 @@ const Login = ({navigation}: LoginProps) => {
         </TouchableOpacity>
         <Button
           disabled={disableBtn}
-          onPress={handleLogin}
+          onPress={checkCredentials}
           title={strings.logIn}
         />
       </View>

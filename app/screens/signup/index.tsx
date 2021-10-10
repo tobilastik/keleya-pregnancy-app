@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, ImageBackground} from 'react-native';
+import {View, ImageBackground, Alert} from 'react-native';
 import _Text from '../../components/Text';
 import {strings} from '../../locales';
 import {styles} from './styles';
@@ -26,7 +26,9 @@ const Signup = ({navigation}: SignupProps) => {
   const [acceptPolicy, setAcceptPolicy] = React.useState(false);
   const [acceptTerms, setAcceptTerms] = React.useState(false);
   const [password, setPassword] = React.useState('');
-  const [email, setEmail] = React.useState('rajio@gmail.com');
+  const [email, setEmail] = React.useState('');
+
+  console.log(userAccount);
 
   React.useEffect(() => {
     validateInputs();
@@ -45,9 +47,21 @@ const Signup = ({navigation}: SignupProps) => {
     }
   };
 
-  const handleSignup = () => {
-    dispactch(userAction.setUserAccount([{email, password}]));
-    navigation.navigate('NameScreen');
+  const checkCredentials = () => {
+    let emailResult = userAccount.filter((obj: any) => {
+      return obj.email == email;
+    });
+    let correctInput = emailResult.some((x: any) => x.email == email);
+    handleSignup(correctInput);
+  };
+
+  const handleSignup = (result: boolean) => {
+    if (result) {
+      Alert.alert('Error!', 'Email already exist');
+    } else {
+      dispactch(userAction.setUserAccount({email, password}));
+      navigation.navigate('NameScreen');
+    }
   };
 
   const toggleTextVisibility = () => {
@@ -107,7 +121,7 @@ const Signup = ({navigation}: SignupProps) => {
       <View style={{alignItems: 'center', paddingBottom: 20}}>
         <Button
           disabled={disableBtn}
-          onPress={handleSignup}
+          onPress={checkCredentials}
           title={strings.createAccount}
         />
       </View>
