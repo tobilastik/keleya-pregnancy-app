@@ -17,7 +17,6 @@ interface LoginProps {
 
 const Login = ({navigation}: LoginProps) => {
   const {userAccount} = useSelector((state: State) => state.account);
-
   const [passwordVisible, setPasswordVisible] = React.useState(false);
   const [password, setPassword] = React.useState('');
   const [email, setEmail] = React.useState('');
@@ -34,21 +33,6 @@ const Login = ({navigation}: LoginProps) => {
       setDisableBtn(true);
     }
   };
-
-  let tobi = [
-    {
-      email: 'raji@gmail.com',
-      password: '12345',
-    },
-    {
-      email: 'raji2@gmail.com',
-      password: '12345',
-    },
-    {
-      email: 'raji3@gmail.com',
-      password: '12345',
-    },
-  ];
 
   const checkCredentials = () => {
     let emailResult = userAccount.filter((obj: any) => {

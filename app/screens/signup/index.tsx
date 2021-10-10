@@ -21,14 +21,14 @@ const Signup = ({navigation}: SignupProps) => {
   const dispactch = useDispatch();
   const {userAccount} = useSelector((state: State) => state.account);
 
+  console.log(userAccount);
+
   const [passwordVisible, setPasswordVisible] = React.useState(false);
   const [disableBtn, setDisableBtn] = React.useState(true);
   const [acceptPolicy, setAcceptPolicy] = React.useState(false);
   const [acceptTerms, setAcceptTerms] = React.useState(false);
   const [password, setPassword] = React.useState('');
   const [email, setEmail] = React.useState('');
-
-  console.log(userAccount);
 
   React.useEffect(() => {
     validateInputs();
@@ -49,9 +49,11 @@ const Signup = ({navigation}: SignupProps) => {
 
   const checkCredentials = () => {
     let emailResult = userAccount.filter((obj: any) => {
-      return obj.email == email;
+      return obj.email == email.toLowerCase();
     });
-    let correctInput = emailResult.some((x: any) => x.email == email);
+    let correctInput = emailResult.some(
+      (x: any) => x.email == email.toLowerCase(),
+    );
     handleSignup(correctInput);
   };
 

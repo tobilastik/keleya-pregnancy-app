@@ -8,17 +8,4 @@ describe('tests for welcome screen', () => {
   it('renders components correctly', () => {
     render(<Welcome navigation />);
   });
-
-  it('handles all button', () => {
-    const {getByTestId} = render(<Welcome navigation />);
-    // fireEvent.press(getByTestId('SignupButton'));
-    // fireEvent.press(getByTestId('LoginButton'));
-  });
-
-  //   it('handles all navigation', () => {
-  //     const pushMock = jest.fn();
-  //     const {getByTestId} = render(<Welcome navigation={{navigate: pushMock}} />);
-
-  //     expect(pushMock).toBeCalledWith('Signup');
-  //   });
 });

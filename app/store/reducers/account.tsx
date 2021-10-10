@@ -1,12 +1,13 @@
 import {USER_ACCOUNT} from '../types';
 
-interface AccountStateArray {
-  userAccount: any;
-}
-
 const initialstate = {
-  userAccount: [],
-} as AccountStateArray;
+  userAccount: [
+    {
+      email: 'raji@gmail.com',
+      password: '12345',
+    },
+  ],
+};
 
 type Action = {
   type: any;

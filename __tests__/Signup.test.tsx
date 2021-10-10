@@ -9,7 +9,7 @@ import * as redux from 'react-redux';
 describe('signup page test', () => {
   const useSelectorMock = jest.spyOn(redux, 'useSelector');
   const useDispatchMock = jest.spyOn(redux, 'useDispatch');
-  const initialState = {email: 'raji@gmail.com', password: '1234'};
+  const initialState = {email: 'raji@gmail.com', password: '12345'};
 
   beforeEach(() => {
     useSelectorMock.mockClear();
