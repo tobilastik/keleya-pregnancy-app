@@ -1,15 +1,21 @@
 import 'react-native';
 import React from 'react';
-import {fireEvent, render, waitFor} from '@testing-library/react-native';
+import {fireEvent, render} from '@testing-library/react-native';
 import DateScreen from '../app/screens/onboarding/DateScreen';
+import configureMockStore from 'redux-mock-store';
 
-it('renders correctly', async () => {
-  const pushMock = jest.fn();
+const mockStore = configureMockStore([]);
 
-  const {getByText, getAllByText} = render(
-    <DateScreen navigation={{navigate: pushMock}} />,
-  );
-  const button = getByText(/Continue/i);
+describe('namescreen component', () => {
+  it('renders component correctly', async () => {
+    const navigation = {navigate: jest.fn()};
 
-  fireEvent.press(button);
+    const route = {params: {isAccesibilityModeOn: false}};
+    const {getByText, getAllByText} = render(
+      <DateScreen route={route} navigation={navigation} />,
+    );
+    const button = getByText(/Continue/i);
+
+    fireEvent.press(button);
+  });
 });

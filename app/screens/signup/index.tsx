@@ -1,11 +1,5 @@
 import * as React from 'react';
-import {
-  View,
-  ImageBackground,
-  Alert,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
+import {View, ImageBackground, Alert} from 'react-native';
 import _Text from '../../components/Text';
 import {strings} from '../../locales';
 import {styles} from './styles';
@@ -26,9 +20,6 @@ interface SignupProps {
 const Signup = ({navigation}: SignupProps) => {
   const dispactch = useDispatch();
   const {userAccount} = useSelector((state: State) => state.account);
-
-  console.log(userAccount);
-
   const [passwordVisible, setPasswordVisible] = React.useState(false);
   const [disableBtn, setDisableBtn] = React.useState(true);
   const [acceptPolicy, setAcceptPolicy] = React.useState(false);

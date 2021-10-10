@@ -17,7 +17,7 @@ const NameScreen = ({navigation}: NameScreenProps) => {
   const [name, setName] = React.useState('');
 
   const handleContinue = () => {
-    navigation.navigate('DateScreen');
+    navigation.navigate('DateScreen', {name});
   };
 
   const handleName = (txt: string) => {

@@ -19,7 +19,7 @@ en: {
   welcomeText:
     "It's great you're here! First things first,what should we call you?",
   yourName: 'Your name',
-  dateScreenTitle: 'When is your baby due,?',
+  dateScreenTitle: 'When is your baby due, ',
   skip: 'Skip',
   allowNotifications: 'Allow notifications',
   successTitle: 'Get notifications to boost your motivation',
@@ -43,7 +43,7 @@ de: {
   acceptTermsText: "Ich akzeptiere die Allgemeinen Geschäftsbedingungen und den Rat von Keleya",
   welcomeText: "Schön, dass Sie hier sind! Das Wichtigste zuerst, wie sollen wir dich nennen?",
   yourName: 'Dein Name',
-  dateScreenTitle: 'Wann kommt Ihr Baby?',
+  dateScreenTitle: 'Wann kommt Ihr Baby, ',
   skip: 'Überspringen',
   allowNotifications: 'Benachrichtigungen zulassen',
   successTitle: 'Erhalten Sie Benachrichtigungen, um Ihre Motivation zu steigern',

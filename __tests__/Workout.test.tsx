@@ -4,11 +4,9 @@ import {fireEvent, render, waitFor} from '@testing-library/react-native';
 import Workout from '../app/screens/onboarding/WorkoutScreen';
 
 it('renders correctly', async () => {
-  const pushMock = jest.fn();
+  const navigation = {navigate: jest.fn()};
 
-  const {getByText, getAllByText} = render(
-    <Workout navigation={{navigate: pushMock}} />,
-  );
+  const {getByText, getAllByText} = render(<Workout navigation={navigation} />);
 
   const button = getByText(/Continue/i);
 

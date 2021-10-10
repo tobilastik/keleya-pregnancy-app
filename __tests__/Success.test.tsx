@@ -4,11 +4,9 @@ import {fireEvent, render, waitFor} from '@testing-library/react-native';
 import Success from '../app/screens/success';
 
 it('renders correctly', async () => {
-  const pushMock = jest.fn();
+  const navigation = {navigate: jest.fn()};
 
-  const {getByText, getAllByText} = render(
-    <Success navigation={{navigate: pushMock}} />,
-  );
+  const {getByText} = render(<Success navigation={navigation} />);
   const button = getByText(/Allow notifications/i);
   const skip = getByText(/Skip/i);
 

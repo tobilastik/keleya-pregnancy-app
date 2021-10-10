@@ -21,12 +21,12 @@ describe('signup page test', () => {
   });
 
   it('renders component correctly', async () => {
-    const pushMock = jest.fn();
+    const navigation = {navigate: jest.fn()};
     const mockStore = configureStore();
     const store = mockStore(initialState);
     const {getByText, getByPlaceholderText} = render(
       <Provider store={store}>
-        <Signup navigation={{navigate: pushMock}} />,
+        <Signup navigation={navigation} />,
       </Provider>,
     );
     const button = getByText(/Create account/i);

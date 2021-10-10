@@ -13,9 +13,11 @@ import moment from 'moment';
 
 interface DateScreenProps {
   navigation: any;
+  route: any;
 }
 
-const DateScreen = ({navigation}: DateScreenProps) => {
+const DateScreen = ({navigation, route}: DateScreenProps) => {
+  const {name} = route.params;
   const [date, setDate] = React.useState(new Date());
   const [open, setOpen] = React.useState(false);
   const [datePicked, setDatePicked] = React.useState(false);
@@ -50,7 +52,10 @@ const DateScreen = ({navigation}: DateScreenProps) => {
       </ImageBackground>
 
       <View style={styles.loginContainer}>
-        <_Text style={styles.welcomeTxt}>{strings.dateScreenTitle}</_Text>
+        <_Text style={styles.welcomeTxt}>
+          {strings.dateScreenTitle}
+          {name}?
+        </_Text>
         <DateComponent
           testID="datePickerBtn"
           datePicked={datePicked}

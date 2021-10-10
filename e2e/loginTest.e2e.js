@@ -8,7 +8,7 @@ describe('Login flow', () => {
     await device.reloadReactNative();
   });
 
-  it('should have welcome screen', async () => {
+  it('should go through login flow', async () => {
     await expect(element(by.id('welcomeImage'))).toBeVisible();
     await element(by.text("Or Login")).tap();
     await expect(element(by.text("Welcome back!"))).toBeVisible();
