@@ -60,3 +60,8 @@ I think this is going to be a long list, if you don't mind :(
 1. Apparently detox is not supporting the latest version of React Native (or some associated libraries), so I had to downgrade my react native version to "0.64.1"
 
 It worked like magic after downgrading it 😁
+
+## What I would have done better
+
+1. Use the git flow, instead of pushing all my commits into main stright up
+2. Divide work between my commits

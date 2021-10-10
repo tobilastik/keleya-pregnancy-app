@@ -18,6 +18,7 @@ interface InputProps {
   centeredText?: boolean;
   value: string;
   onChangeText: any;
+  testID: string;
 }
 
 const Input = ({
@@ -28,6 +29,7 @@ const Input = ({
   centeredText,
   value,
   onChangeText,
+  testID,
 }: InputProps) => {
   const renderRightIcon = () => {
     if (secureTextEntry) {
@@ -59,6 +61,7 @@ const Input = ({
         value={value}
         onChangeText={onChangeText}
         autoCorrect={false}
+        testID={testID}
       />
       {renderRightIcon()}
     </Flex>

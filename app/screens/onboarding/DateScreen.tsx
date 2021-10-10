@@ -41,7 +41,7 @@ const DateScreen = ({navigation}: DateScreenProps) => {
   let maxDate = new Date(moment().add(9, 'months').toDate());
 
   return (
-    <View style={{backgroundColor: WHITE, flex: 1}}>
+    <View testID="dateScreen" style={{backgroundColor: WHITE, flex: 1}}>
       <ImageBackground
         resizeMode="cover"
         style={styles.image}
@@ -52,6 +52,7 @@ const DateScreen = ({navigation}: DateScreenProps) => {
       <View style={styles.loginContainer}>
         <_Text style={styles.welcomeTxt}>{strings.dateScreenTitle}</_Text>
         <DateComponent
+          testID="datePickerBtn"
           datePicked={datePicked}
           date={datePicked ? date : placeholder}
           onPress={() => setOpen(true)}
@@ -77,6 +78,7 @@ const DateScreen = ({navigation}: DateScreenProps) => {
 
       <View style={{alignItems: 'center', paddingBottom: 20}}>
         <Button
+          testID="continueBtn"
           disabled={disableBtn}
           onPress={handleContinue}
           title={strings.continue}

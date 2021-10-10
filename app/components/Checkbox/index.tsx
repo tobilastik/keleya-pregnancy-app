@@ -10,13 +10,17 @@ interface CheckBoxProps {
   checked: boolean;
   text: string;
   onPress: () => void;
+  testID: string;
 }
 
-const CheckBox = ({checked, text, onPress}: CheckBoxProps) => {
+const CheckBox = ({checked, text, onPress, testID}: CheckBoxProps) => {
   return (
     <Flex>
       <Flex style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.circle} onPress={onPress}>
+        <TouchableOpacity
+          testID={testID}
+          style={styles.circle}
+          onPress={onPress}>
           {checked && <Icon name="check-bold" size={20} color={PALE_TEAL} />}
         </TouchableOpacity>
         <_Text style={styles.checkboxText} weight="medium">

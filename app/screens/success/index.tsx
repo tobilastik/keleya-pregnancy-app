@@ -19,7 +19,10 @@ interface SuccessScreenProps {
 
 const SuccessScreen = (props: SuccessScreenProps) => {
   return (
-    <ImageBackground style={styles.imgBg} source={img.notificationBg}>
+    <ImageBackground
+      testID="successScreen"
+      style={styles.imgBg}
+      source={img.notificationBg}>
       <SafeAreaView style={styles.container}>
         <EvilIcons name="bell" size={55} color="black" />
         <_Text style={styles.notificationTxt}>{strings.successTitle}</_Text>

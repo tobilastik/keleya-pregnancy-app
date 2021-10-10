@@ -25,7 +25,10 @@ const Welcome = ({navigation}: WelcomeProps) => {
     navigation.navigate('Login');
   };
   return (
-    <ImageBackground style={styles.imgBg} source={img.firstIntro}>
+    <ImageBackground
+      testID="welcomeImage"
+      style={styles.imgBg}
+      source={img.firstIntro}>
       <SafeAreaView style={styles.container}>
         <Image style={styles.logo} source={img.keleya} />
         <_Text weight="medium" style={styles.welcomeTxt}>

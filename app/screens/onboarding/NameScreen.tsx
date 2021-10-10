@@ -30,7 +30,7 @@ const NameScreen = ({navigation}: NameScreenProps) => {
   };
 
   return (
-    <>
+    <View testID="nameScreen" style={{flex: 1}}>
       <ImageBackground
         resizeMode="cover"
         style={styles.image}
@@ -41,6 +41,7 @@ const NameScreen = ({navigation}: NameScreenProps) => {
       <View style={styles.loginContainer}>
         <_Text style={styles.welcomeTxt}>{strings.welcomeText}</_Text>
         <Input
+          testID="name"
           value={name}
           onChangeText={(txt: string) => handleName(txt)}
           centeredText
@@ -50,12 +51,13 @@ const NameScreen = ({navigation}: NameScreenProps) => {
 
       <View style={{alignItems: 'center', paddingBottom: 20}}>
         <Button
+          testID="continueBtn"
           disabled={disableBtn}
           onPress={handleContinue}
           title={strings.continue}
         />
       </View>
-    </>
+    </View>
   );
 };
 

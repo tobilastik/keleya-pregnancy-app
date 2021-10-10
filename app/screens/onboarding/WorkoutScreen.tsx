@@ -19,7 +19,7 @@ const WorkoutScreen = ({navigation}: WorkoutScreenProps) => {
   };
 
   return (
-    <View style={{backgroundColor: WHITE, flex: 1}}>
+    <View testID="workoutScreen" style={{backgroundColor: WHITE, flex: 1}}>
       <ImageBackground
         resizeMode="cover"
         style={styles.image}
@@ -29,7 +29,11 @@ const WorkoutScreen = ({navigation}: WorkoutScreenProps) => {
       </ImageBackground>
       <ScrollPicker />
       <View style={{alignItems: 'center', paddingBottom: 20}}>
-        <Button onPress={handleContinue} title={strings.continue} />
+        <Button
+          testID="continueBtn"
+          onPress={handleContinue}
+          title={strings.continue}
+        />
       </View>
     </View>
   );

@@ -8,12 +8,21 @@ interface DateComponentProps {
   date: any;
   onPress: () => void;
   datePicked: boolean;
+  testID: string;
 }
 
-const DateComponent = ({date, onPress, datePicked}: DateComponentProps) => {
+const DateComponent = ({
+  date,
+  onPress,
+  datePicked,
+  testID,
+}: DateComponentProps) => {
   const [placeholder, setPlaceholder] = React.useState('Select date');
   return (
-    <TouchableOpacity style={styles.dateContainer} onPress={onPress}>
+    <TouchableOpacity
+      testID={testID}
+      style={styles.dateContainer}
+      onPress={onPress}>
       <_Text weight="bold" style={styles.dateTxt}>
         {datePicked ? moment(date).format('MMM DD, YYYY') : placeholder}
       </_Text>

@@ -71,11 +71,13 @@ const Login = ({navigation}: LoginProps) => {
           {strings.welcomeback}
         </_Text>
         <Input
+          testID="email"
           value={email}
           placeholder="example@gmail.com"
           onChangeText={(txt: string) => setEmail(txt)}
         />
         <Input
+          testID="password"
           value={password}
           onChangeText={(txt: string) => setPassword(txt)}
           secureTextEntry
@@ -92,6 +94,7 @@ const Login = ({navigation}: LoginProps) => {
           </_Text>
         </TouchableOpacity>
         <Button
+          testID="loginBtn"
           disabled={disableBtn}
           onPress={checkCredentials}
           title={strings.logIn}

@@ -1,5 +1,11 @@
 import * as React from 'react';
-import {View, ImageBackground, Alert} from 'react-native';
+import {
+  View,
+  ImageBackground,
+  Alert,
+  TouchableOpacity,
+  Text,
+} from 'react-native';
 import _Text from '../../components/Text';
 import {strings} from '../../locales';
 import {styles} from './styles';
@@ -79,7 +85,7 @@ const Signup = ({navigation}: SignupProps) => {
   };
 
   return (
-    <>
+    <View style={{flex: 1}} testID="signupScreen">
       <View style={styles.imageContainer}>
         <Header navigation={navigation} />
         <ImageBackground
@@ -94,11 +100,13 @@ const Signup = ({navigation}: SignupProps) => {
           {strings.titleAccountDetails}
         </_Text>
         <Input
+          testID="email"
           value={email}
           placeholder="example@gmail.com"
           onChangeText={(txt: string) => setEmail(txt)}
         />
         <Input
+          testID="password"
           value={password}
           onChangeText={(txt: string) => setPassword(txt)}
           secureTextEntry
@@ -108,11 +116,13 @@ const Signup = ({navigation}: SignupProps) => {
         />
         <View style={{padding: 20}}>
           <CheckBox
+            testID="acceptPolicy"
             checked={acceptPolicy}
             onPress={handlePolicy}
             text={strings.readPolicyText}
           />
           <CheckBox
+            testID="acceptTerms"
             checked={acceptTerms}
             onPress={handleTerms}
             text={strings.acceptTermsText}
@@ -122,12 +132,12 @@ const Signup = ({navigation}: SignupProps) => {
 
       <View style={{alignItems: 'center', paddingBottom: 20}}>
         <Button
-          disabled={disableBtn}
+          testID="signupBtn"
           onPress={checkCredentials}
           title={strings.createAccount}
         />
       </View>
-    </>
+    </View>
   );
 };
 
