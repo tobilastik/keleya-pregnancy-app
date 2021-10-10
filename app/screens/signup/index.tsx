@@ -132,6 +132,7 @@ const Signup = ({navigation}: SignupProps) => {
 
       <View style={{alignItems: 'center', paddingBottom: 20}}>
         <Button
+          disabled={disableBtn}
           testID="signupBtn"
           onPress={checkCredentials}
           title={strings.createAccount}

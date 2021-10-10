@@ -51,9 +51,9 @@ I think this is going to be a long list, if you don't mind :(
 
 3. Giving developer's the discretion to choose how to store data is also good, this would show if the developer has experience using state management libraries.
 
-   Alternatively, I would have used Firebase, but then, that will still be backend write? 😁
+   Alternatively, I would have used Firebase, but then, that will still be backend right? 😁
 
-   I chose redux and used redux-persist to persist data, so even if the app is closed, users can still signin with the data they used in signing up.
+   I chose redux and used redux-persist to persist data, so even if the app is closed, users can still sign in with the data they used in signing up.
 
 ## Challenges faced 😔
 
@@ -63,5 +63,5 @@ It worked like magic after downgrading it 😁
 
 ## What I would have done better
 
-1. Use the git flow, instead of pushing all my commits into main stright up
+1. Use the git flow, instead of pushing all my commits into `main branch` stright up
 2. Divide work between my commits
