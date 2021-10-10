@@ -22,16 +22,6 @@ password: `12345`
 
 ## How to run unit testing
 
-Run the following command
-
-`yarn jest`
-
-To watch
-
-`yarn jest --watchAll`
-
-## How to run unit testing
-
 Use the following command:
 
 `yarn test`
@@ -42,7 +32,7 @@ To watch
 
 ## How to E2E testing
 
-To run this test, you should have xcode install on your machine :)
+To run this test, you should have xcode install on your machine
 
 1. For test build on iOS:
    `yarn e2e:build-ios`
@@ -60,5 +50,13 @@ I think this is going to be a long list, if you don't mind :(
    So thanks for giving so much time!!
 
 3. Giving developer's the discretion to choose how to store data is also good, this would show if the developer has experience using state management libraries.
+
    Alternatively, I would have used Firebase, but then, that will still be backend write? 😁
+
    I chose redux and used redux-persist to persist data, so even if the app is closed, users can still signin with the data they used in signing up.
+
+## Challenges faced 😔
+
+1. Apparently detox is not supporting the latest version of React Native (or some associated libraries), so I had to downgrade my react native version to "0.64.1"
+
+It worked like magic after downgrading it 😁
