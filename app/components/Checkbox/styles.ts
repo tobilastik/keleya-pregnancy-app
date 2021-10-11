@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { GREYISH_BROWN } from "../../constants/colors";
+import { GREYISH_BROWN, PALE_TEAL } from "../../constants/colors";
 
 export const styles = StyleSheet.create({
   buttonContainer: {
@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     width: 20,
     borderRadius: 3,
     borderWidth: 1,
-    borderColor: '#539eff',
+    borderColor: PALE_TEAL,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     width: 14,
     height: 14,
     borderRadius: 7,
-    backgroundColor: '#539eff',
+    backgroundColor: PALE_TEAL,
   },
   checkboxText: {
     marginLeft: 8,

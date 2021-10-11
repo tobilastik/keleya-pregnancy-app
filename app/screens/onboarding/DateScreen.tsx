@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, ImageBackground} from 'react-native';
+import {View, ImageBackground, ScrollView} from 'react-native';
 import _Text from '../../components/Text';
 import {strings} from '../../locales';
 import {styles} from './styles';
@@ -43,7 +43,7 @@ const DateScreen = ({navigation, route}: DateScreenProps) => {
   let maxDate = new Date(moment().add(9, 'months').toDate());
 
   return (
-    <View testID="dateScreen" style={{backgroundColor: WHITE, flex: 1}}>
+    <ScrollView testID="dateScreen" style={{backgroundColor: WHITE, flex: 1}}>
       <ImageBackground
         resizeMode="cover"
         style={styles.image}
@@ -89,7 +89,7 @@ const DateScreen = ({navigation, route}: DateScreenProps) => {
           title={strings.continue}
         />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

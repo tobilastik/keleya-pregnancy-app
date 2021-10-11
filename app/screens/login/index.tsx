@@ -1,5 +1,11 @@
 import * as React from 'react';
-import {View, ImageBackground, TouchableOpacity, Alert} from 'react-native';
+import {
+  View,
+  ImageBackground,
+  TouchableOpacity,
+  Alert,
+  ScrollView,
+} from 'react-native';
 import _Text from '../../components/Text';
 import {strings} from '../../locales';
 import {styles} from './styles';
@@ -56,9 +62,10 @@ const Login = ({navigation}: LoginProps) => {
     setPasswordVisible(!passwordVisible);
   };
   return (
-    <>
+    <ScrollView style={{flex: 1}}>
       <View style={styles.imageContainer}>
         <Header navigation={navigation} />
+
         <ImageBackground
           resizeMode="cover"
           style={styles.image}
@@ -100,7 +107,7 @@ const Login = ({navigation}: LoginProps) => {
           title={strings.logIn}
         />
       </View>
-    </>
+    </ScrollView>
   );
 };
 

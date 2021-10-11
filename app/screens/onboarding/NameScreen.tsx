@@ -1,5 +1,11 @@
 import * as React from 'react';
-import {View, ImageBackground, TouchableOpacity, Image} from 'react-native';
+import {
+  View,
+  ImageBackground,
+  TouchableOpacity,
+  Image,
+  ScrollView,
+} from 'react-native';
 import _Text from '../../components/Text';
 import {strings} from '../../locales';
 import {styles} from './styles';
@@ -30,7 +36,7 @@ const NameScreen = ({navigation}: NameScreenProps) => {
   };
 
   return (
-    <View testID="nameScreen" style={{flex: 1}}>
+    <ScrollView testID="nameScreen" style={{flex: 1}}>
       <ImageBackground
         resizeMode="cover"
         style={styles.image}
@@ -57,7 +63,7 @@ const NameScreen = ({navigation}: NameScreenProps) => {
           title={strings.continue}
         />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

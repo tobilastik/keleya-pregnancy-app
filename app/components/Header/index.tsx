@@ -25,5 +25,6 @@ export default Header;
 const styles = StyleSheet.create({
   container: {
     padding: 12,
+    marginBottom: 12,
   },
 });

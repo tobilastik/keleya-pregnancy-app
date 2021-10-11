@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, ImageBackground} from 'react-native';
+import {View, ImageBackground, ScrollView} from 'react-native';
 import _Text from '../../components/Text';
 import {strings} from '../../locales';
 import {styles} from './styles';
@@ -19,7 +19,9 @@ const WorkoutScreen = ({navigation}: WorkoutScreenProps) => {
   };
 
   return (
-    <View testID="workoutScreen" style={{backgroundColor: WHITE, flex: 1}}>
+    <ScrollView
+      testID="workoutScreen"
+      style={{backgroundColor: WHITE, flex: 1}}>
       <ImageBackground
         resizeMode="cover"
         style={styles.image}
@@ -28,14 +30,18 @@ const WorkoutScreen = ({navigation}: WorkoutScreenProps) => {
         <_Text style={styles.welcomeTxt}>{strings.activityWorkoutTitle}</_Text>
       </ImageBackground>
       <ScrollPicker />
-      <View style={{alignItems: 'center', paddingBottom: 20}}>
+      <View
+        style={{
+          alignItems: 'center',
+          paddingBottom: 20,
+        }}>
         <Button
           testID="continueBtn"
           onPress={handleContinue}
           title={strings.continue}
         />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, ImageBackground, Alert} from 'react-native';
+import {View, ImageBackground, Alert, ScrollView} from 'react-native';
 import _Text from '../../components/Text';
 import {strings} from '../../locales';
 import {styles} from './styles';
@@ -76,7 +76,7 @@ const Signup = ({navigation}: SignupProps) => {
   };
 
   return (
-    <View style={{flex: 1}} testID="signupScreen">
+    <ScrollView style={{flex: 1}} testID="signupScreen">
       <View style={styles.imageContainer}>
         <Header navigation={navigation} />
         <ImageBackground
@@ -129,7 +129,7 @@ const Signup = ({navigation}: SignupProps) => {
           title={strings.createAccount}
         />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
