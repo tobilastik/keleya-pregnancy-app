@@ -15,7 +15,7 @@ en: {
   continue: 'Continue',
   activityWorkoutTitle: 'How many times a week you can be active?',
   readPolicyText: "I've read the privacy policy",
-  acceptTermsText: "I accept the terms & conditions and Keleya's advice",
+  acceptTermsText: "I accept the terms & conditions and  advice",
   welcomeText:
     "It's great you're here! First things first,what should we call you?",
   yourName: 'Your name',
@@ -40,7 +40,7 @@ de: {
   continue: 'Weitermachen',
   activityWorkoutTitle: 'Wie oft in der Woche können Sie aktiv sein?',
   readPolicyText: "Ich habe die Datenschutzerklärung gelesen",
-  acceptTermsText: "Ich akzeptiere die Allgemeinen Geschäftsbedingungen und den Rat von Keleya",
+  acceptTermsText: "Ich akzeptiere die Allgemeinen Geschäftsbedingungen und den Rat von ",
   welcomeText: "Schön, dass Sie hier sind! Das Wichtigste zuerst, wie sollen wir dich nennen?",
   yourName: 'Dein Name',
   dateScreenTitle: 'Wann kommt Ihr Baby, ',

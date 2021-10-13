@@ -30,7 +30,6 @@ const Welcome = ({navigation}: WelcomeProps) => {
       style={styles.imgBg}
       source={img.firstIntro}>
       <SafeAreaView style={styles.container}>
-        <Image style={styles.logo} source={img.keleya} />
         <_Text weight="medium" style={styles.welcomeTxt}>
           {strings.welcomeTitle}
         </_Text>

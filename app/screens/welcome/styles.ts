@@ -18,6 +18,7 @@ export const styles = StyleSheet.create({
     welcomeTxt: {
         fontSize: 20,
         textAlign: 'center',
-        color: GREYISH_BROWN
+        color: GREYISH_BROWN,
+        // marginTop: 40
     }
 })
