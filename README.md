@@ -18,7 +18,7 @@ password: `12345`
 1. State Management(Redux) to store user data
 2. Two Languagee(English and German) Support - The language depends on the user's phone configuration.
 3. Unit and Component testing with `@testing-library/react-native`
-4. UI testing with `detox` (the test was only set up and tested on iOS)
+4. E2E testing with `detox` (the test was only set up and tested on iOS)
 
 ## How to run unit testing
 
