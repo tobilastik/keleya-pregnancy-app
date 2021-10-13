@@ -1,4 +1,4 @@
-# Coding Challenge Solution
+# Onboarding app
 
 ## How to run locally
 
