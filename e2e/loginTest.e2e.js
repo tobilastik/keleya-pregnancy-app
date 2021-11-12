@@ -10,7 +10,7 @@ describe('Login flow', () => {
 
   it('should go through login flow', async () => {
     await expect(element(by.id('welcomeImage'))).toBeVisible();
-    await element(by.text("Or Login")).tap();
+    await element(by.id("Or Login")).tap();
     await expect(element(by.text("Welcome back!"))).toBeVisible();
     await element(by.id("email")).typeText("raji@gmail.com");
     await element(by.id("password")).typeText("12345");
